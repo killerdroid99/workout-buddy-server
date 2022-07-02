@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const workouts = require("../routes/workouts");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 
@@ -13,6 +14,8 @@ app.use(
 );
 
 app.use(bodyParser.json());
+
+app.use(cors());
 
 app.use("/", workouts);
 
